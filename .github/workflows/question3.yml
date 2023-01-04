@@ -1,0 +1,19 @@
+name: question3
+
+on:
+
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  question3:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+        
+      - name: Installer python 
+        uses: actions/setup-python@v4
+      
+      - name: Executer la commande 
+        run: python main.py
