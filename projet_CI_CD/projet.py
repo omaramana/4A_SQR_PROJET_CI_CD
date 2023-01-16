@@ -15,13 +15,21 @@ if __name__ == '__main__':
             print("Passed argument not supported ! Supported argument : check_syntax")
             exit(1)
     app.run(debug=True)
-    
+
+class Personne:
+    def __init__(self, id, nom, prenom, solde):
+        self.id = id
+        self.nom = nom
+        self.prenom = prenom
+        self.solde = solde
+
 transactions = [
      ("Omar", "Simo", "Jeudi 12 Janvier 2023", 50),
      ("Simo", "Omar", "Vendredi 13 Janvier 2023", 25),
      ("Benjamin", "Romain", "Lundi 25 Juin 2023", 76)
      ]
 
+personnes = []
 
 @app.route('/', methods=['GET'])
 def home():
