@@ -1,20 +1,6 @@
-from flask import Flask, request
+from flask import Flask
 
 app = Flask(__name__)
-
-@app.route('/')
-def index():
-    return "Hello, World!"
-
-if __name__ == '__main__':
-    if len(sys.argv) > 1:
-        if sys.argv[1] == "check_syntax":
-            print("Build [ OK ]")
-            exit(0)
-        else:
-            print("Passed argument not supported ! Supported argument : check_syntax")
-            exit(1)
-    app.run(debug=True)
 
 class Personne:
     def __init__(self, id, nom, prenom, solde):
@@ -23,9 +9,6 @@ class Personne:
         self.prenom = prenom
         self.solde = solde
 
-    def toString(self):
-        return str(self.id) + ': ' + self.nom + ' ' + self.prenom + ' ' + str(self.solde)
-
 class Transaction:
     def __init__(self, p1, p2, date, somme):
         self.p1 = p1
@@ -33,17 +16,16 @@ class Transaction:
         self.date = date
         self.somme = somme
 
-    def toString(self):
-        return self.p1.nom + ' ' +  self.p2.nom + ' ' +  self.date + ' ' + str(self.somme)
+personne0 = Personne(0, "Mohamed", "El Amri", 500)
+personne1 = Personne(1, "Omar", "Amana", 120)
+personne2 = Personne(2, "Karim", "Benzema", 120000)
+personne3 = Personne(3, "Valerie", "Pecresse", -5000000)
 
-transactions = [
-     ("Omar", "Simo", "Jeudi 12 Janvier 2023", 50),
-     ("Simo", "Omar", "Vendredi 13 Janvier 2023", 25),
-     ("Benjamin", "Romain", "Lundi 25 Juin 2023", 76)
-     ]
-
-personnes = []
+personnes = [personne0, personne1, personne2, personne3]
+transactions = []
 
 @app.route('/', methods=['GET'])
 def home():
-    return "Hello World !"
+    sortieEcran = "<h1> Bienvenue sur l'API de gestion des transactions !<h1>"
+    return sortieEcran
+
