@@ -62,7 +62,7 @@ def afficherTransactions():
 
 @app.route("/listeTransactionPourUnClient/<int:id>", methods=['GET'])
 def listeTransactionPourUnClient(id):
-    sortieEcran = "<h3>Liste des transactions du client </h3>\n"
+    sortieEcran = "<h3>Liste des transactions du client "+str(personnes[int(id)].nom)+" "+str(personnes[int(id)].prenom)+" est :</h3>\n"
     for transaction in transactions:
         if transaction.p1 == personnes[int(id)]:
             sortieEcran += "<p>" + transaction.toString() + "</p>\n"
