@@ -52,11 +52,19 @@ def ajouterTransaction(id1, id2, date, somme):
     sortieEcran += transactions[-1].toString() + listeClients()
     return sortieEcran
 
-
-@app.route("/listeTransactions")
+@app.route("/listeTransactions", methods=['GET'])
 def afficherTransactions():
-    sortieEcran = "<h3>Liste de Transaction :</h3>\n"
+    sortieEcran = "<h3>Liste des transactions :</h3>\n"
     for transaction in transactions:
         transactions.sort(key=attrgetter('date'))
         sortieEcran += "<p>" + transaction.toString() + "</p>\n"
     return sortieEcran
+
+@app.route("/listeTransactionPourUnClient/<int:id>", methods=['GET'])
+def listeTransactionPourUnClient(id):
+    sortieEcran = "<h3>Liste des transactions du client </h3>\n"
+    for transaction in transactions:
+        if transaction.p1 == personnes[int(id)]:
+            sortieEcran += "<p>" + transaction.toString() + "</p>\n"
+    return sortieEcran
+
