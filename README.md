@@ -18,6 +18,7 @@ https://github.com/elamrimohamed1
 <p align="center">
   <img src="https://miro.medium.com/max/720/1*94uo6-HGPepRG9I0L_Bh7w.webp""width="700"/
   </p>
+<p> Nous avons choidi le sujet guidé car nous n'étions pas en capacité de nous lancer dans l'autre sujet moins guidé du fait de notre expérience réduite dans ce genre de projet. Nous avons également choisi le langage de programmation Python car nous sommes habitués à l'utiliser du fait de nomobreux projets réalisés avec ce langage. </p>
 
 ![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)
 
