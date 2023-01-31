@@ -51,3 +51,12 @@ def ajouterTransaction(id1, id2, date, somme):
     transactions.sort(key=attrgetter('date'))
     sortieEcran += transactions[-1].toString() + listeClients()
     return sortieEcran
+
+
+@app.route("/listeTransactions")
+def afficherTransactions():
+    sortieEcran = "<h3>Liste de Transaction :</h3>\n"
+    for transaction in transactions:
+        transactions.sort(key=attrgetter('date'))
+        sortieEcran += "<p>" + transaction.toString() + "</p>\n"
+    return sortieEcran
