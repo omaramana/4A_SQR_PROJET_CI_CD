@@ -1,6 +1,12 @@
 # 4A_SQR_PROJET_CI_CD
-*AMANA OMAR & EL AMRI MOHAMED*
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/93181410/166483696-8a4daae2-d6e3-4a61-b425-f5118cc6e085.png" width="700"/>
+</p>
+*Réalisé par : AMANA OMAR & EL AMRI MOHAMED*
 **SQR**
+Objectif du projet  : Créer une API Flask pour de la gestion CRUD d’un système de transaction.
+Langage utilisé : Python.
+
 ## Partie Exercices 
 https://github.com/omaramana
 
