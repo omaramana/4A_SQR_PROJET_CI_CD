@@ -1,4 +1,5 @@
 from flask import Flask
+from operator import attrgetter
 
 app = Flask(__name__)
 
@@ -20,7 +21,7 @@ class Transaction:
         self.somme = somme
 
     def toString(self):
-        return "Le client " + "<b>"+self.p1.nom+"</b>" +" a envoyé "+ "<b>"+str(self.somme)+"</b>" + " à "+ "<b>"+self.p2.nom+"</b>" + ' le ' + "<b>"+self.date+"</b>" + '.'
+        return "Le client " + "<b>"+self.p1.nom+"</b>" +" a envoyé "+ "<b>"+str(self.somme)+"</b>" +" euros "+ " à "+ "<b>"+self.p2.nom+"</b>" + ' le ' + "<b>"+self.date+"</b>" + '.'
 
 
 personne0 = Personne(0, "Mohamed", "El Amri", 500)
@@ -41,4 +42,12 @@ def listeClients():
     sortieEcran = "<h1>Liste des clients :</h1>\n"
     for personne in personnes:
         sortieEcran += "<p>" + personne.toString() + "</p>\n"
+    return sortieEcran
+
+@app.route("/ajouterTransaction/<int:id1>/<int:id2>/<date>/<int:somme>")
+def ajouterTransaction(id1, id2, date, somme):
+    sortieEcran = "<h1>La transaction effectuée est la suivante : </h1>\n"
+    transactions.append(Transaction(personnes[int(id1)], personnes[int(id2)], date, int(somme)))
+    transactions.sort(key=attrgetter('date'))
+    sortieEcran += transactions[-1].toString() + listeClients()
     return sortieEcran
