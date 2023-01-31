@@ -15,7 +15,9 @@ https://github.com/omaramana
 
 https://github.com/elamrimohamed1
 
-![alt text](https://miro.medium.com/max/720/1*94uo6-HGPepRG9I0L_Bh7w.webp)
+<p align="center">
+  <img src="https://miro.medium.com/max/720/1*94uo6-HGPepRG9I0L_Bh7w.webp""width="700"/
+  </p>
 
 ![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)
 
