@@ -68,3 +68,9 @@ def listeTransactionPourUnClient(id):
             sortieEcran += "<p>" + transaction.toString() + "</p>\n"
     return sortieEcran
 
+@app.route("/soldeUnClient/<int:id>", methods=['GET'])
+def soldeUnClient(id):
+    sortieEcran = "<h3>Le solde restant pour le client "+str(personnes[int(id)].nom)+" "+str(personnes[int(id)].nom)+" est : </h3>\n"
+    sortieEcran += str(personnes[int(id)].solde)
+    return sortieEcran
+
