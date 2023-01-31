@@ -15,7 +15,6 @@ jobs:
         uses: actions/setup-python@v4
         
       - name: Installer Flask 
-        run: pip install flask
-
-      - name: Check syntax 
-        run: python projet.py check_syntax 
+        run: |
+          python -m pip install flask
+          python projet.py check_syntax 
