@@ -25,3 +25,32 @@ https://github.com/elamrimohamed1
 ![badge aller sur le site](https://github.com/omaramana/4A_SQR_PROJET_CI_CD/actions/workflows/allerSurLeSite.yml/badge.svg)
 ![badge echo push](https://github.com/omaramana/4A_SQR_PROJET_CI_CD/actions/workflows/echoNewPush.yml/badge.svg)
 ![badge pull request](https://github.com/omaramana/4A_SQR_PROJET_CI_CD/actions/workflows/question3.yml/badge.svg)
+
+                                                                                      
+## Partie commandes                                                                               
+                                                                                      
+E1 - Enregistrer une transaction : 
+```                                                                             
+curl -X GET http://localhost:5555/E1/{id1}/{id2}/{date}/{somme}
+```
+                                                                               
+E2 - Afficher une liste de toutes les transactions dans l’ordre chronologique :
+```
+curl -X GET http://localhost:5555/listeTransactions                                                                                     
+```
+
+E3 - Afficher une liste des transactions dans l’ordre chronologique liées à une personne.
+```
+curl -X GET http://localhost:5555/listeTransactionPourUnClient/{id}                                                                                   
+```
+                                                                                      
+E4 - Afficher le solde du compte de la personne 
+```
+curl -X GET http://localhost:5555/soldeUnClient/{id}
+```
+                                                                                      
+E5 - Importer des données depuis un fichier csv
+```
+curl -X POST -F 'clients=@{file.csv}' http://localhost:5555/importerDepuisCSV/personnes
+curl -X POST -F 'transactions=@{file.csv}' http://localhost:5555/importerDepuisCSV/transactions
+```
