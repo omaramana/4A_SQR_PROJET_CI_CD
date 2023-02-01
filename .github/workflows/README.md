@@ -1,6 +1,6 @@
 Les workflows crées sont les suivaants : 
 
-Les workflows allerSurLeSite.yml, question3.yml et echoNewPush.yml ont été crées lors de la première séance de TD, ils ne servent à rien dans le cadre dans notre projet mais nous avons décider de les garder. 
+Les workflows allerSurLeSite.yml, question3.yml et echoNewPush.yml ont été crées lors de la première séance de TD, ils ne servent à rien dans le cadre dans notre projet mais nous avons décidé de les garder. 
 
 • Une déclenchée à chaque changement pour builder l’application. : buildApplication.yml 
 
