@@ -1,0 +1,145 @@
+openapi: 3.0.3
+info:
+  title: CI-CD AMANA EL AMRI 
+  description: |-
+    Détails des endpoints 
+  termsOfService: http://swagger.io/terms/
+  version: 1.2.1
+externalDocs:
+  description: Find out more about Swagger
+  url: http://swagger.io
+servers:
+  - url: http://localhost:5555/
+tags:
+  - name: personnes
+    description: Une personne possède un nom, un prénom, un id et un solde 
+  - name: transactions
+    description: Une transaction est composée d'un expediteur, d'un destinataire, d'une date et d'une somme 
+paths:
+  /listeClients:
+    get:
+      tags:
+        - personnes
+      summary: Afficher la liste des clients 
+      description: Afficher la liste des clients 
+      responses:
+        '200':
+          description: "Liste des clients"
+          content:
+            application/html:
+              schema:
+                type: "string"
+                format: "html"
+  /listeTransactions:
+    get:
+      tags:
+        - transactions
+      summary: Afficher la liste des transactions 
+      description: Afficher la liste des transactions
+      responses:
+        '200':
+          description: "Liste des transactions"
+          content:
+            application/html:
+              schema:
+                type: "string"
+                format: "html"
+                
+  /ajouterTransaction/{id1}/{id2}/{date}/{somme}:
+    post:
+      tags:
+        - transactions
+      summary: Ajouter une transaction
+      description: Ajouter une transaction
+      parameters:
+        - in: path
+          name: id1
+          schema:
+            type: integer
+          required: true
+          description: id de p1
+        - in: path
+          name: id2
+          schema:
+            type: integer
+          required: true
+          description: id de p2
+        - in: path
+          name: date
+          schema:
+            type: string
+          required: true
+          description: Date de la transaction
+        - in: path
+          name: somme
+          schema:
+            type: integer
+          required: true
+          description: Somme de la transaction
+      responses:
+        '200':
+          description: Successful operation
+  /listeTransactions/{id}:
+    get:
+      tags:
+        - transactions
+      summary: Lister les transactions d'un client  
+      description: Afficher une liste des transactions dans l’ordre chronologique d'un client 
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+          description: id de du client 
+      responses:
+        '200':
+          description: Successful operation
+         
+  /soldeUnClient/{id}:
+    get:
+      tags:
+        - personnes
+      summary: Afficher le solde du compte d'un client 
+      description: Afficher le solde du compte d'un client 
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+          description: ID de la personne concernée
+      responses:
+        '200':
+          description: Successful operation
+        
+  /importerDepuisCSV/personnes:
+    post:
+      tags:
+        - personnes
+      summary: Importer le fichier csv clients.csv
+      description: Importer le fichier csv clients.csv
+      parameters:
+        - name: "personnes"
+          description: 
+          in: "query"
+          required: true
+      
+      responses:
+        '200':
+          description: Successful operation
+  /importerDepuisCSV/transactions:
+    post:
+      tags:
+        - transactions
+      summary: Importer le fichier csv transactions.csv
+      description: Importer le fichier csv transactions.csv
+      parameters:
+        - name: "transactions"
+          description: 
+          in: "query"
+          required: true
+      responses:
+        '200':
+          description: Successful operation
+        
