@@ -75,12 +75,17 @@ def soldeUnClient(id):
     sortieEcran += str(personnes[int(id)].solde)
     return sortieEcran
 
-if __name__ == '__main__':
-    if len(sys.argv) > 1:
-        if sys.argv[1] == "check_syntax":
-            print("Build [ OK ]")
-            exit(0)
-        else:
-            print("Passed argument not supported ! Supported argument : check_syntax")
-            exit(1)
-    app.run(debug=True)
+@app.route("/importerDepuisCSV/personnes", methods=['POST'])
+def listerClientsCSV():
+    if request.files:
+        file = request.files['personnes']
+        filepath = os.path.join(file.filename)
+        file.save(filepath)
+
+        with open(filepath) as csv_file:
+            reader = csv.reader(csv_file)
+            for row in reader:
+                personnes.append(Personne(len(personnes), row[0], row[1], int(row[2])))
+    else:
+        print("Une erreur s'est produite.")    
+    return listeClients()
