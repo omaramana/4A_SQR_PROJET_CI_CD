@@ -89,3 +89,19 @@ def listerClientsCSV():
     else:
         print("Une erreur s'est produite.")    
     return listeClients()
+
+@app.route("/importerDepuisCSV/transactions", methods=['POST'])
+def listerTransactionsCSV():
+    if request.files:
+        file = request.files['transactions']
+        filepath = os.path.join(file.filename)
+        file.save(filepath)
+
+        with open(filepath) as csv_file:
+            reader = csv.reader(csv_file)
+            for row in reader:
+                ajouterTransaction(int(row[0]), int(row[1]), row[2], int(row[3]))
+    else:
+        print("Une erreur s'est produite.")      
+    return afficherTransactions()
+
