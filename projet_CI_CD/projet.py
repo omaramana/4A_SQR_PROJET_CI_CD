@@ -82,7 +82,7 @@ def listerClientsCSV():
         filepath = os.path.join(file.filename)
         file.save(filepath)
 
-        with open(filepath) as csv_file:
+        with open(clients.csv) as csv_file:
             reader = csv.reader(csv_file)
             for row in reader:
                 personnes.append(Personne(len(personnes), row[0], row[1], int(row[2])))
@@ -97,7 +97,7 @@ def listerTransactionsCSV():
         filepath = os.path.join(file.filename)
         file.save(filepath)
 
-        with open(filepath) as csv_file:
+        with open(transactions.csv) as csv_file:
             reader = csv.reader(csv_file)
             for row in reader:
                 ajouterTransaction(int(row[0]), int(row[1]), row[2], int(row[3]))
