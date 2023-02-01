@@ -4,7 +4,12 @@ Les workflows allerSurLeSite.yml, question3.yml et echoNewPush.yml ont été cr�
 
 • Une déclenchée à chaque changement pour builder l’application. : buildApplication.yml 
 
-• Une déclenchée manuellement pour builder et dockeriser et pousser l’image de l’API. : bdpImageAPI.yml (bdp pour Build Docker et push)
+![badge buildApplication](https://github.com/omaramana/4A_SQR_PROJET_CI_CD/actions/workflows/buildApplication.yml/badge.svg)
+
+• Une déclenchée manuellement pour builder et dockeriser et pousser l’image de l’API. : bdpImageAPI.yml (bdp pour Build Docker et push) 
+
+![badge bdpImageAPI](https://github.com/omaramana/4A_SQR_PROJET_CI_CD/actions/workflows/bdpImageAPI.yml/badge.svg)
 
 • Une déclenchée pour chaque tag semver pour builder et dockeriser et pousser l’image de l’API avec en tag la version semver spécifiée. : Docker_Push_GCR.yml
 
+![badge Docker_Push_GCR](https://github.com/omaramana/4A_SQR_PROJET_CI_CD/actions/workflows/Docker_Push_GCR.yml/badge.svg)
