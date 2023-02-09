@@ -10,6 +10,8 @@ Objectif du projet  : Créer une API Flask pour de la gestion CRUD d’un systè
 
 Langage utilisé : Python.
 
+[![](https://img.shields.io/badge/PROJET_TERMINÉ_🚀-059142?style=for-the-badge&logoColor=white)](https://dev.to/envoy_/150-badges-for-github-pnk) 
+
 ## Partie Exercices 
 https://github.com/omaramana
 
